@@ -1,0 +1,57 @@
+div {}
+
+
+
+
+.todoList,
+#newList {
+    border: 2px solid var(--border);
+    border-radius: 15px;
+    background-color: var(--highlight);
+
+}
+
+.task {
+    border-top: 1px solid var(--midden-line)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 275px;
+
+    gap: 25px;
+    margin: 25px;
+}
+
+.taskInput {
+    margin-left: 20px;
+}
+
+.taskCheckbox {
+    background-color: inherit;
+    border: none;
+}
+
+
+.listButton {
+    color: var(--button-Text)
+        /* border-left: 1px solid black; */
+        /* background-color: #797878; */
+}
+
+input {
+    color: inherit;
+    cursor: pointer;
+    border: 0cm;
+    background-color: inherit;
+    margin-left: 10px;
+    size: 90%;
+
+}
+
+button {
+    color: var(--button-Text);
+    cursor: pointer;
+    background-color: inherit;
+    border: 0cm;
+}

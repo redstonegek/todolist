@@ -1,0 +1,9 @@
+{
+    "listId": {
+        "name": "string",
+        "user": "userId",
+        "ids": [
+            "taskId"
+        ]
+    }
+}

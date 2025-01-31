@@ -1,0 +1,7 @@
+{
+    "taskId": {
+        "list": "listId",
+        "name": "string",
+        "done": "bool"
+    }
+}
