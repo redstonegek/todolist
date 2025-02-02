@@ -1,9 +1,9 @@
 {
-    "listId": {
-        "name": "string",
-        "user": "userId",
-        "ids": [
-            "taskId"
-        ]
-    }
+	"listId": {
+		"name": "string",
+		"user": "userId",
+		"ids": [
+			"taskId"
+		]
+	}
 }

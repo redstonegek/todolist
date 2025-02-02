@@ -1,7 +1,7 @@
 {
-    "taskId": {
-        "list": "listId",
-        "name": "string",
-        "done": "bool"
-    }
+	"taskId": {
+		"list": "listId",
+		"name": "string",
+		"done": "bool"
+	}
 }
