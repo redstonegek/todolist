@@ -17,12 +17,27 @@ export class UserData {
 
 	readFile() {
 		const json = readJsonFile(this.file);
-		this.IDlists = json.ids;
-		//TODO:parse json to userdate object
+		this.IDlists = json.ids ? json.ids : [];
+		//TODO:test for data
 	}
 
-	update() {
+	update(json, type) { //type = post, or delete
 		// TODO: update the object with the data that was given
+	}
+
+	addID(id) {
+		//TODO:check if id is not yet added
+		this.IDlists.push(id);
+		this.save();
+	}
+
+	removeID(id) {
+		const i = this.IDlists.indexOf(id);
+		if (i > -1) {
+			this.IDlists.splice(i, 1);
+		}
+
+		this.save();
 	}
 
 	getObj(Recursive = false) {
@@ -43,14 +58,16 @@ export class UserData {
 
 	save() {
 		const json = {
-			ids: this.IDlists
-		}
+			ids: this.IDlists,
+		};
+		writeJsonFile(this.file, json);
 		// write this object to the file(creating it if needed)
 	}
 }
 
 function writeJsonFile(path, json) {
-	
+	const text = JSON.stringify(json);
+	Deno.writeTextFileSync(path, text);
 }
 
 function readJsonFile(path) {
