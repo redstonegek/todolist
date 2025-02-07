@@ -1,3 +1,4 @@
+import { readJsonFile, writeJsonFile } from "../utils/fileUtil.js";
 // "userId": {
 //         "ids": [
 //             "listId"
@@ -62,25 +63,5 @@ export class UserData {
 		};
 		writeJsonFile(this.file, json);
 		// write this object to the file(creating it if needed)
-	}
-}
-
-function writeJsonFile(path, json) {
-	const text = JSON.stringify(json);
-	Deno.writeTextFileSync(path, text);
-}
-
-function readJsonFile(path) {
-	Deno.createSync(path);
-	const text = Deno.readTextFileSync(path);
-	if (text == "") {
-		return {};
-	}
-	try {
-		return JSON.parse(text);
-	} catch (_error) {
-		console.log("failed to load json file: " + path);
-
-		return {};
 	}
 }
