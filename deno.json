@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno fmt | deno run --watch --allow-all main.js",
+		"dev": "deno fmt | deno run --watch --allow-net --allow-read --allow-write main.js",
 		"lint": "deno fmt | deno lint"
 	},
 	"imports": {
