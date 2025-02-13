@@ -1,6 +1,6 @@
 import { UserData } from "./dataTypes/userData.js";
-
-
+import { listData } from "./dataTypes/listData.js";
+import { taskData } from "./dataTypes/taskData.js";
 
 export class dataManager {
 	instances = {};
@@ -8,9 +8,25 @@ export class dataManager {
 		if (this.instances[id]) {
 			return this.instances[id];
 		}
-		// TODO: make a new instances
+		let instances;
+		switch (getType(id)) {
+			case "user":
+				instances = new UserData(id, this);
+				break;
+			case "list":
+				instances = new listData(id, this);
+				break;
+			case "task":
+				instances = new taskData(id, this);
+				break;
+			default:
+				console.log("invaled id used");
+				return null;
+		}
+		this.instances[id] = instances;
+		return instances;
 	}
-	
+
 	getObj(id, Recursive = false) {
 		const type = getType(id);
 		switch (type) {
