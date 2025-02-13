@@ -1,4 +1,5 @@
 import { readJsonFile, writeJsonFile } from "../utils/fileUtil.js";
+import { baseData } from "./baseData.js";
 // "listId": {
 // 		"name": "string",
 // 		"user": "userId",
@@ -6,16 +7,14 @@ import { readJsonFile, writeJsonFile } from "../utils/fileUtil.js";
 // 			"taskId"
 // 		]
 // 	}
-export class listData {
-	id;
+export class listData extends baseData {
 	IDlists = [];
 	name = "";
 	user = "";
 	file;
-	manager;
+
 	constructor(id, manager) {
-		this.id = id;
-		this.manager = manager;
+		super(id,manager)
 		this.file = `data/list/${id}.json`;
 		this.readFile();
 	}
@@ -29,6 +28,10 @@ export class listData {
 
 	update(json, type) { //type = post, or delete
 		// TODO: update the object with the data that was given
+	}
+
+	get(){
+		
 	}
 
 	addID(id) {

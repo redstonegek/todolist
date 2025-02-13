@@ -1,17 +1,16 @@
 import { readJsonFile, writeJsonFile } from "../utils/fileUtil.js";
+import { baseData } from "./baseData.js";
 // "userId": {
 //         "ids": [
 //             "listId"
 //         ]
 //     }
-export class UserData {
-	id;
+export class UserData extends baseData {
 	IDlists = [];
 	file;
-	manager;
+	
 	constructor(id, manager) {
-		this.id = id;
-		this.manager = manager;
+		super(id,manager)
 		this.file = `data/user/${id}.json`;
 		this.readFile();
 	}
