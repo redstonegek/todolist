@@ -6,14 +6,13 @@ import { baseData } from "./baseData.js";
 // 		"done": "bool"
 // 	}
 export class taskData extends baseData {
-	
 	list = "";
 	name = "";
 	done = false;
 	file;
-	
+
 	constructor(id, manager) {
-		super(id,manager)
+		super(id, manager);
 		this.file = `data/task/${id}.json`;
 		this.readFile();
 	}

@@ -8,9 +8,9 @@ import { baseData } from "./baseData.js";
 export class UserData extends baseData {
 	IDlists = [];
 	file;
-	
+
 	constructor(id, manager) {
-		super(id,manager)
+		super(id, manager);
 		this.file = `data/user/${id}.json`;
 		this.readFile();
 	}

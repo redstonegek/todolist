@@ -2,7 +2,7 @@ import { UserData } from "./dataTypes/userData.js";
 import { listData } from "./dataTypes/listData.js";
 import { taskData } from "./dataTypes/taskData.js";
 
-export class dataManager {
+export class DataManager {
 	instances = {};
 	getInstances(id) {
 		if (this.instances[id]) {
@@ -27,14 +27,12 @@ export class dataManager {
 		return instances;
 	}
 
-	getObj(id, Recursive = false) {
-		const type = getType(id);
-		switch (type) {
-			case "user":
-				break;
-			default:
-				break;
-		}
+	get(id, Recursive = false) {
+		const instances = this.getInstances(id);
+	}
+
+	post(id, object) {
+		const instances = this.getInstances(id);
 	}
 }
 

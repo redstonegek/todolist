@@ -6,11 +6,9 @@ export class baseData {
 		this.manager = manager;
 	}
 
-    get(){
+	get() {
+	}
 
-    }
-
-    update(){
-        
-    }
+	update() {
+	}
 }

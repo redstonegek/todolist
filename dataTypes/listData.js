@@ -14,7 +14,7 @@ export class listData extends baseData {
 	file;
 
 	constructor(id, manager) {
-		super(id,manager)
+		super(id, manager);
 		this.file = `data/list/${id}.json`;
 		this.readFile();
 	}
@@ -30,8 +30,7 @@ export class listData extends baseData {
 		// TODO: update the object with the data that was given
 	}
 
-	get(){
-		
+	get() {
 	}
 
 	addID(id) {
