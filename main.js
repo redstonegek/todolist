@@ -27,5 +27,5 @@ function handleDataReq(req) {
 	const qerry = url.pathname.split("/");
 	const body = req.json();
 
-	return dataManager.handleDataReq(method, qerry, body)
+	return dataManager.handleDataReq(method, qerry, body);
 }
