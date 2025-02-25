@@ -19,7 +19,7 @@ export class DataManager {
 			case "task":
 				instances = new taskData(id, this);
 				break;
-			default:
+			default: 
 				console.log("invaled id used");
 				return null;
 		}
